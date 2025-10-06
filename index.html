@@ -44,7 +44,6 @@
 
     <div class="container mx-auto p-4 md:p-8">
         
-        <!-- Cabeçalho e Pesquisa -->
         <header class="text-center mb-10">
             <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Guia de Fórmulas Essenciais do Excel</h1>
             <p class="text-slate-600 mt-2">Suas fórmulas do Excel 2016 e 365 em um só lugar.</p>
@@ -54,10 +53,8 @@
             </div>
         </header>
 
-        <!-- Grade de Fórmulas -->
         <main id="formulaGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-            <!-- Card SOMA -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="soma sum">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">SOMA</h2>
@@ -84,7 +81,6 @@
                 </div>
             </div>
 
-            <!-- Card MÉDIA -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="média average">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">MÉDIA</h2>
@@ -105,13 +101,12 @@
                         <h3 class="font-semibold mb-1 text-slate-800">Regras Importantes:</h3>
                         <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
                              <li>Células vazias ou com texto são ignoradas no cálculo.</li>
-                            <li>Células com o valor 0 são incluídas no cálculo.</li>
+                             <li>Células com o valor 0 são incluídas no cálculo.</li>
                         </ul>
                     </div>
                 </div>
             </div>
             
-            <!-- Card SE -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="se if">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">SE</h2>
@@ -137,7 +132,32 @@
                 </div>
             </div>
 
-            <!-- Card SOMASES -->
+            <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="somase sumif">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-slate-900">SOMASE</h2>
+                    <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Excel 2016 & 365</span>
+                </div>
+                <div class="formula-card-content">
+                    <p class="mb-4 text-slate-600">Soma valores em um intervalo que atendem a um único critério.</p>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Sintaxe:</h3>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">SOMASE(intervalo; critério; [intervalo_soma])</code>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Exemplo Simples:</h3>
+                        <p class="text-slate-600 text-sm mb-2">Somar vendas (B2:B10) apenas do vendedor "João" (A2:A10):</p>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">=SOMASE(A2:A10; "João"; B2:B10)</code>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1 text-slate-800">Regras Importantes:</h3>
+                        <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
+                            <li>O <code class="text-xs">[intervalo_soma]</code> é opcional; se omitido, soma o primeiro intervalo.</li>
+                            <li>Use aspas para critérios de texto ou lógicos (ex: ">100").</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="somases sumifs">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">SOMASES</h2>
@@ -163,8 +183,109 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="cont.se contse countif">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-slate-900">CONT.SE</h2>
+                    <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Excel 2016 & 365</span>
+                </div>
+                <div class="formula-card-content">
+                    <p class="mb-4 text-slate-600">Conta o número de células dentro de um intervalo que atendem a um critério.</p>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Sintaxe:</h3>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">CONT.SE(intervalo; critério)</code>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Exemplo Simples:</h3>
+                        <p class="text-slate-600 text-sm mb-2">Contar quantas vezes a palavra "Pendente" aparece no intervalo C2:C50:</p>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">=CONT.SE(C2:C50; "Pendente")</code>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1 text-slate-800">Regras Importantes:</h3>
+                        <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
+                            <li>Não diferencia maiúsculas de minúsculas.</li>
+                            <li>Pode usar caracteres curinga como * (qualquer sequência) e ? (qualquer caractere único).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Card PROCV -->
+            <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="cont.ses contses countifs">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-slate-900">CONT.SES</h2>
+                    <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Excel 2016 & 365</span>
+                </div>
+                <div class="formula-card-content">
+                    <p class="mb-4 text-slate-600">Conta células que atendem a múltiplos critérios simultaneamente.</p>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Sintaxe:</h3>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">CONT.SES(intervalo_critérios1; critério1; ...)</code>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Exemplo Simples:</h3>
+                        <p class="text-slate-600 text-sm mb-2">Contar projetos "Aprovados" (A1:A10) que estão "Dentro do prazo" (B1:B10):</p>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">=CONT.SES(A1:A10; "Aprovado"; B1:B10; "Dentro do prazo")</code>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1 text-slate-800">Regras Importantes:</h3>
+                        <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
+                           <li>Todos os intervalos devem ter exatamente o mesmo número de linhas e colunas.</li>
+                           <li>A condição é do tipo "E", ou seja, todos os critérios precisam ser verdadeiros.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="média.se mediase averageif">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-slate-900">MÉDIA.SE</h2>
+                    <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Excel 2016 & 365</span>
+                </div>
+                <div class="formula-card-content">
+                    <p class="mb-4 text-slate-600">Calcula a média de células que atendem a um único critério.</p>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Sintaxe:</h3>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">MÉDIA.SE(intervalo; critério; [intervalo_média])</code>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Exemplo Simples:</h3>
+                        <p class="text-slate-600 text-sm mb-2">Calcular a média de vendas (B2:B10) apenas para a categoria "Frutas" (A2:A10):</p>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">=MÉDIA.SE(A2:A10; "Frutas"; B2:B10)</code>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1 text-slate-800">Regras Importantes:</h3>
+                        <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
+                            <li>Ignora células vazias e de texto no cálculo da média.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="média.ses mediases averageifs">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-slate-900">MÉDIA.SES</h2>
+                    <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Excel 2016 & 365</span>
+                </div>
+                <div class="formula-card-content">
+                    <p class="mb-4 text-slate-600">Calcula a média de células que atendem a múltiplos critérios.</p>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Sintaxe:</h3>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">MÉDIA.SES(intervalo_média; intervalo_critérios1; critério1; ...)</code>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Exemplo Simples:</h3>
+                        <p class="text-slate-600 text-sm mb-2">Média de vendas (C2:C10) de "Laptops" (A2:A10) na filial "Norte" (B2:B10):</p>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">=MÉDIA.SES(C2:C10; A2:A10; "Laptops"; B2:B10; "Norte")</code>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1 text-slate-800">Regras Importantes:</h3>
+                        <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
+                           <li>Note que o intervalo da média vem ANTES dos critérios, diferente do SOMASES.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="procv vlookup">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">PROCV</h2>
@@ -191,7 +312,6 @@
                 </div>
             </div>
 
-            <!-- Card PROCX -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="procx xlookup">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">PROCX</h2>
@@ -218,7 +338,6 @@
                 </div>
             </div>
 
-            <!-- Card ÍNDICE+CORRESP -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="indice corresp index match">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">ÍNDICE + CORRESP</h2>
@@ -245,7 +364,6 @@
                 </div>
             </div>
 
-            <!-- Card FILTRO -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="filtro filter">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">FILTRO</h2>
@@ -271,7 +389,6 @@
                 </div>
             </div>
 
-            <!-- Card MÁXIMO -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="máximo maximo max">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">MÁXIMO</h2>
@@ -297,7 +414,6 @@
                 </div>
             </div>
 
-            <!-- Card MÍNIMO -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="mínimo minimo min">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">MÍNIMO</h2>
@@ -323,7 +439,6 @@
                 </div>
             </div>
 
-            <!-- Card MAIOR -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="maior large">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">MAIOR</h2>
@@ -349,7 +464,6 @@
                 </div>
             </div>
 
-            <!-- Card MENOR -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="menor small">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">MENOR</h2>
@@ -375,7 +489,6 @@
                 </div>
             </div>
 
-            <!-- Card ESQUERDA -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="esquerda left">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">ESQUERDA</h2>
@@ -401,7 +514,6 @@
                 </div>
             </div>
 
-            <!-- Card DIREITA -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="direita right">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">DIREITA</h2>
@@ -427,8 +539,7 @@
                 </div>
             </div>
 
-             <!-- Card EXT.TEXTO -->
-            <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="ext.texto mid">
+             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="ext.texto mid">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">EXT.TEXTO</h2>
                     <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Excel 2016 & 365</span>
@@ -453,7 +564,32 @@
                 </div>
             </div>
             
-            <!-- Card UNIRTEXTO -->
+             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="localizar find search">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold text-slate-900">LOCALIZAR</h2>
+                    <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Excel 2016 & 365</span>
+                </div>
+                <div class="formula-card-content">
+                    <p class="mb-4 text-slate-600">Retorna a posição inicial de um texto dentro de outro (diferencia maiúsculas).</p>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Sintaxe:</h3>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">LOCALIZAR(texto_procurado; no_texto; [núm_inicial])</code>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="font-semibold mb-1 text-slate-800">Exemplo Simples:</h3>
+                        <p class="text-slate-600 text-sm mb-2">Encontrar a posição do "@" no email em A2:</p>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">=LOCALIZAR("@"; A2)</code>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-1 text-slate-800">Regras Importantes:</h3>
+                        <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
+                           <li>É "case-sensitive", ou seja, "a" é diferente de "A".</li>
+                           <li>Use a função <code class="text-xs">PROCURAR</code> se não quiser diferenciar maiúsculas/minúsculas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="unirtexto textjoin">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">UNIRTEXTO</h2>
@@ -479,8 +615,7 @@
                 </div>
             </div>
             
-             <!-- Card HOJE -->
-            <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="hoje today">
+             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="hoje today">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">HOJE</h2>
                     <span class="bg-sky-100 text-sky-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Excel 2016 & 365</span>
@@ -506,7 +641,6 @@
                 </div>
             </div>
 
-            <!-- Card PGTO -->
             <div class="formula-card bg-white p-6 rounded-xl shadow-md border border-slate-200" data-formula-name="pgto pmt">
                 <div class="flex justify-between items-center mb-4">
                     <h2 class="text-2xl font-bold text-slate-900">PGTO</h2>
@@ -521,13 +655,13 @@
                     <div class="mb-4">
                         <h3 class="font-semibold mb-1 text-slate-800">Exemplo Simples:</h3>
                         <p class="text-slate-600 text-sm mb-2">Parcela de um empréstimo de R$10.000 em 36 meses a 1% a.m.:</p>
-                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">=PGTO(1%/12; 36; 10000)</code>
+                        <code class="block bg-slate-100 p-2 rounded text-sm text-slate-700 w-full">=PGTO(1%; 36; -10000)</code>
                     </div>
                     <div>
                         <h3 class="font-semibold mb-1 text-slate-800">Regras Importantes:</h3>
                         <ul class="list-disc list-inside text-slate-600 text-sm space-y-1">
                            <li>A <code class="text-xs">taxa</code> e o <code class="text-xs">nper</code> (nº de períodos) devem ser consistentes (ex: ambos mensais).</li>
-                           <li>O resultado é negativo, pois representa uma saída de caixa.</li>
+                           <li>O valor do empréstimo (vp) deve ser negativo se representar uma entrada de caixa para você.</li>
                         </ul>
                     </div>
                 </div>
@@ -535,7 +669,6 @@
 
         </main>
         
-        <!-- Mensagem de Nenhum Resultado -->
         <div id="noResultsMessage" class="hidden text-center mt-10">
             <h3 class="text-2xl font-semibold text-slate-700">Nenhuma fórmula encontrada</h3>
             <p class="text-slate-500 mt-2">Tente refinar sua busca.</p>
